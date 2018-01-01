@@ -1,0 +1,158 @@
+<DOCTYPE! html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>PronouncUR: An Urdu Pronunciation Lexicon Generator</title>
+		<style type="text/css">
+			.example
+			{
+				border: 1px solid #666;
+				border-collapse: collapse;
+				background-color: rgb(255, 255, 204);
+				text-align: left;
+				padding: 5px;
+			}
+			a
+			{
+				color: black;
+			}
+            
+            #out {
+                height: 125px;
+                overflow: auto;
+                margin: 0 20pt;
+                border: 1px solid #aaa;
+                width: 500px;
+                padding: 10pt;
+            }
+		</style>
+        <script type="text/javascript" src="static/jquery-3.2.1.min.js"></script>
+         <script>
+ 
+          $(document).ready(function() {
+             $('#convertg2p').click(function(){
+                $.post('g2p',{'text':$('#text').val()},function(data){
+                    $('#out').text(data)
+                });
+                
+             });
+          });
+         
+  </script>
+	</head>
+	<body>
+		<center>
+			<div name="header" style="width: 90%;">
+				<table style="width:100%;">
+					<tr>
+						
+						<td style="width: 25%;">
+							
+							<img src="/static/csalt.png" style="width: 45%; float: left;">
+						</td>
+						<td style="width: 50%">
+							
+							<center>
+								<p style="font-size: 2.5vw; font-weight: bold;">
+									PronouncUR: An Urdu Pronunciation Lexicon Generator
+								</p>
+								<p style="font-size: 1.5vw;"">
+									<a href="{{ url_for('index') }}">Home</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="{{ url_for('graphemes') }}">Urdu Graphemes</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="{{ url_for('phonemes') }}">Urdu Phonemes</a>
+								</p>
+							</center>
+						</td>
+						<td style="width: 25%;">
+							
+							<img src="/static/itu.png" style="width: 80%; float: right;">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<hr>
+		</center>
+			<div name="content" style="width: 90%; margin-left: 20px;">
+				
+				<p style="margin-top: 30px;">
+					This tool generates a pronunciation dictionary from a list of Urdu words in a form, suitable for use with a speech recognizer, such as <a target="_blank" href="https://cmusphinx.github.io/">CMUSphinx</a> and text-to-speech system, such as <a href="http://mary.dfki.de/" target="_blank">MaryTTS</a>.
+					<br><br>
+					Read my lips - this tool works only for Urdu. This means this tool only support Urdu graphemes. For the list of supported graphemes see this <a href="{{ url_for('graphemes') }}" target="_blank">link</a>. Urdu grapheme to phoneme mapping is explained on this <a href="{{ url_for('phonemes') }}" target="_blank">link</a>.
+					<br><br>
+					If you notice any errors in the output, such as a seemingly incorrect pronunciation, please report it and we will figure out what to do with it.
+					<br><br>
+					You can send reports to haris.zia@itu.edu.pk
+				</p>
+                
+                <h1>Convert Text</h1>
+                <table><tr><td>
+					<textarea name="text" cols="60" rows="10" id="text">فولاد
+نچانے
+جائیداد
+لَڑکِیوں
+درویشی
+الجھاؤ</textarea>
+                </td><td><pre id="out" />Output would be shown here</td></tr>
+                
+                    <tr>
+                        <td><input type="button" id="convertg2p" value="Convert"/></td><td>
+					</td>
+                    </tr>
+                </table>
+				<h1>Convert File</h1>
+				<p>
+					Input Format: Write your words in a text (.txt) file, one word per line (Use diacritics for better results). See this <a target="_blank" href="{{ url_for('static', filename='sample.txt') }}" target="_blank">sample.txt</a> 
+				</p>
+				<form action=/upload method=post enctype=multipart/form-data>
+					<p><input type=file name=file>
+					<input type=submit value=Upload>
+				</form>
+				<table class="example" style="width: 50%;">
+	
+					<tr class="example">
+						
+						<td class="example">
+							If your input file looks something like this:
+						</td>
+						<td class="example">
+							Your output file should look something like this:
+						</td>
+					</tr>
+					<tr class="example">
+						
+						<td class="example">
+							<pre>
+فولاد
+نچانے
+جائیداد
+لَڑکِیوں
+درویشی
+الجھاؤ
+							</pre>
+						</td>
+						<td class="example">
+							<pre>
+فولاد	F O L A_A D_D
+نچانے	N A T_S A_A N A_Y
+جائیداد	D_Z A_A I_I D_D A_A D_D
+لَڑکِیوں	L A R_R K I J O_O_N
+درویشی	D_D A R V A_Y S_H I_I
+الجھاؤ	U L D_Z_H A_A O_O
+							</pre>
+						</td>
+						
+					</tr>
+				</table>
+			</div>
+		<center>
+			<hr>
+			<div name="footer" style="width: 90%;">
+				<center>
+					<p style="font-size: 1.3vw;">
+						Copyrights Ⓒ 2017 | <a href="http://www.csalt.itu.edu.pk" target="_blank">Center for Speech and Language Technologies</a> | <a href="http://www.itu.edu.pk" target="_blank">Information Technology University</a>
+					</p>
+				</center>
+			</div>
+		</center>
+	</body>
+</html>

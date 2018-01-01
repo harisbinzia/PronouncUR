@@ -1,0 +1,632 @@
+<DOCTYPE! html>
+
+<html>
+
+	<head>
+
+		 <meta charset="UTF-8">
+
+		<title>PronouncUR: An Urdu Pronunciation Lexicon Generator</title>
+
+		<style type="text/css">
+
+			.nostyle
+			{
+				border: none;
+				padding: 0px;
+				background-color: #fff;
+			}
+
+			.nostyle:hover
+			{
+				border: none;
+				padding: 0px;
+				background-color: #fff;
+			}
+
+			tr, table, td, th
+			{
+				text-align: center;
+				border: 1px solid black;
+			}
+
+			table
+			{
+				border-collapse: collapse;
+			}
+
+			td
+			{
+				padding: 5px;
+			}
+
+			tr:hover
+			{
+				background-color: rgb(255, 255, 204);
+			}
+			
+			.noHover:hover
+			{
+				background-color: #ffffff;
+			}
+			.noHover
+			{
+				border-style: none;
+			}
+
+			a
+			{
+				color: black;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<center>
+
+			<div name="header" style="width: 90%;">
+
+				<table class="nostyle" style="width:100%;">
+
+					<tr class="nostyle">
+						
+						<td class="nostyle" style="width: 25%;">
+							
+							<img src="/static/csalt.png" style="width: 45%; float: left;">
+
+						</td>
+
+						<td class="nostyle" style="width: 50%">
+							
+							<center>
+								<p style="font-size: 2.5vw; font-weight: bold;">
+									PronouncUR: An Urdu Pronunciation Lexicon Generator
+								</p>
+
+								<p style="font-size: 1.5vw;"">
+									<a href="{{ url_for('index') }}">Home</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="{{ url_for('graphemes') }}">Urdu Graphemes</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="{{ url_for('phonemes') }}">Urdu Phonemes</a>
+								</p>
+
+							</center>
+
+						</td>
+
+						<td class="nostyle" style="width: 25%;">
+							
+							<img src="/static/itu.png" style="width: 80%; float: right;">
+
+						</td>
+
+					</tr>
+
+				</table>
+
+			</div>
+			<hr>
+
+			<div name="content" style="width: 90%;">
+				
+				<center>
+					Below table summarizes the list of CISAMPA phonemes supported by Urdu LexTool.
+
+					<table class="noHover" width="70%">
+						
+						<tr width="100%">
+							<th colspan="2">Consonants</th>
+						</tr>
+
+						<tr class="noHover" width="100%">
+							<td class="noHover" style="padding: 15px; width: 46%;">
+
+								<table width="100%">
+
+									<tr>
+										<th>#</th>
+										<th>Urdu Letter</th>
+										<th>IPA</th>
+										<th>CISAMPA</th>
+									</tr>
+
+
+									<tr>
+										<td>1</td>
+										<td>پ</td>
+										<td>p</td>
+										<td>P</td>
+									</tr>
+
+
+									<tr>
+										<td>2</td>
+										<td>پھ</td>
+										<td>pʰ</td>
+										<td>P_H</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>ب</td>
+										<td>b</td>
+										<td>B</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>بھ</td>
+										<td>bʰ</td>
+										<td>B_H</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>م</td>
+										<td>m</td>
+										<td>M</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>مھ</td>
+										<td>mʰ</td>
+										<td>M_H</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>ت،ط</td>
+										<td>t̪</td>
+										<td>T_D</td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td>تھ</td>
+										<td>t̪ʰ</td>
+										<td>T_D_H</td>
+									</tr>
+									<tr>
+										<td>9</td>
+										<td>د</td>
+										<td>d̪</td>
+										<td>D_D</td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>دھ</td>
+										<td>d̪ʰ</td>
+										<td>D_D_H</td>
+									</tr>
+									<tr>
+										<td>11</td>
+										<td>ٹ</td>
+										<td>t</td>
+										<td>T</td>
+									</tr>
+									<tr>
+										<td>12</td>
+										<td>ٹھ</td>
+										<td>tʰ</td>
+										<td>T_H</td>
+									</tr>
+									<tr>
+										<td>13</td>
+										<td>ڈ</td>
+										<td>d</td>
+										<td>D</td>
+									</tr>
+									<tr>
+										<td>14</td>
+										<td>ڈھ</td>
+										<td>dʰ</td>
+										<td>D_H</td>
+									</tr>
+									<tr>
+										<td>15</td>
+										<td>ن</td>
+										<td>n</td>
+										<td>N</td>
+									</tr>
+									<tr>
+										<td>16</td>
+										<td>نھ</td>
+										<td>nʰ</td>
+										<td>N_H</td>
+									</tr>
+									<tr>
+										<td>17</td>
+										<td>ک</td>
+										<td>k</td>
+										<td>K</td>
+									</tr>
+									<tr>
+										<td>18</td>
+										<td>کھ</td>
+										<td>kʰ</td>
+										<td>K_H</td>
+									</tr>
+									<tr>
+										<td>19</td>
+										<td>گ</td>
+										<td>ɡ</td>
+										<td>G</td>
+									</tr>
+									<tr>
+										<td>20</td>
+										<td>گھ</td>
+										<td>ɡʰ</td>
+										<td>G_H</td>
+									</tr>
+									<tr>
+										<td>21</td>
+										<td>ن in نک،نکھ،نگ،نگھ</td>
+										<td>ŋ</td>
+										<td>N_G</td>
+									</tr>
+									<tr>
+										<td>22</td>
+										<td>ق</td>
+										<td>q</td>
+										<td>Q</td>
+									</tr>
+
+								</table>
+
+							</td>
+							<td class="noHover" style="padding: 15px; width: 46%;">			
+								<table width="100%">
+
+									<tr>
+										<th>#</th>
+										<th>Urdu Letter</th>
+										<th>IPA</th>
+										<th>CISAMPA</th>
+									</tr>
+
+									<tr>
+										<td>23</td>
+										<td>ع</td>
+										<td>ʔ</td>
+										<td>Y</td>
+									</tr>
+									<tr>
+										<td>24</td>
+										<td>ف</td>
+										<td>f</td>
+										<td>F</td>
+									</tr>
+									<tr>
+										<td>25</td>
+										<td>و</td>
+										<td>v</td>
+										<td>V</td>
+									</tr>
+									<tr>
+										<td>26</td>
+										<td>س</td>
+										<td>s</td>
+										<td>S</td>
+									</tr>
+									<tr>
+										<td>27</td>
+										<td>ذ،ز،ض،ظ</td>
+										<td>z</td>
+										<td>Z</td>
+									</tr>
+									<tr>
+										<td>28</td>
+										<td>ش</td>
+										<td>ʃ</td>
+										<td>S_H</td>
+									</tr>
+									<tr>
+										<td>29</td>
+										<td>ژ</td>
+										<td>ʒ</td>
+										<td>Z_Z</td>
+									</tr>
+									<tr>
+										<td>30</td>
+										<td>خ</td>
+										<td>x</td>
+										<td>X</td>
+									</tr>
+									<tr>
+										<td>31</td>
+										<td>غ</td>
+										<td>ɣ</td>
+										<td>G_G</td>
+									</tr>
+									<tr>
+										<td>32</td>
+										<td>ح،ہ</td>
+										<td>h</td>
+										<td>H</td>
+									</tr>
+									<tr>
+										<td>33</td>
+										<td>ل</td>
+										<td>l</td>
+										<td>L</td>
+									</tr>
+									<tr>
+										<td>34</td>
+										<td>لھ</td>
+										<td>lʰ</td>
+										<td>L_H</td>
+									</tr>
+		
+									
+									<tr>
+										<td>35</td>
+										<td>ر</td>
+										<td>r</td>
+										<td>R</td>
+									</tr>
+									<tr>
+										<td>36</td>
+										<td>رھ</td>
+										<td>rʰ</td>
+										<td>R_H</td>
+									</tr>
+									<tr>
+										<td>37</td>
+										<td>ڑ</td>
+										<td>ɽ</td>
+										<td>R_R</td>
+									</tr>
+									<tr>
+										<td>38</td>
+										<td>ڑھ</td>
+										<td>ɽʰ</td>
+										<td>R_R_H</td>
+									</tr>
+									<tr>
+										<td>39</td>
+										<td>ی</td>
+										<td>j</td>
+										<td>J</td>
+									</tr>
+									<tr>
+										<td>40</td>
+										<td>یھ</td>
+										<td>jʰ</td>
+										<td>J_H</td>
+									</tr>
+									<tr>
+										<td>41</td>
+										<td>چ</td>
+										<td>tʃ</td>
+										<td>T_S</td>
+									</tr>
+									<tr>
+										<td>42</td>
+										<td>چھ</td>
+										<td>tʃʰ</td>
+										<td>T_S_H</td>
+									</tr>
+									<tr>
+										<td>43</td>
+										<td>ج</td>
+										<td>dʒ</td>
+										<td>D_Z</td>
+									</tr>
+									<tr>
+										<td>44</td>
+										<td>جھ</td>
+										<td>dʒʰ</td>
+										<td>D_Z_H</td>
+									</tr>
+
+								</table>
+							</td>
+						</tr>
+
+						<tr width="100%">
+							<th colspan="2">Vowels</th>
+						</tr>
+
+						<tr class="noHover" width="100%">
+							<td class="noHover" style="padding: 15px; width: 46%;">
+								
+								<table width="100%">
+									<tr>
+										<th>#</th>
+										<th>Urdu Letter</th>
+										<th>IPA</th>
+										<th>CISAMPA</th>
+									</tr>
+
+									<tr>
+										<td colspan="4">Long Vowels</td>
+									</tr>
+
+									<tr>
+										<td>45</td>
+										<td>و ُ</td>
+										<td>uː</td>
+										<td>U_U</td>
+									</tr>
+									
+									<tr>
+										<td>46</td>
+										<td>و</td>
+										<td>oː</td>
+										<td>O_O</td>
+									</tr>
+									
+									<tr>
+										<td>47</td>
+										<td>و َ</td>
+										<td>ɔː</td>
+										<td>O</td>
+									</tr>
+									
+									<tr>
+										<td>48</td>
+										<td>آ،ا</td>
+										<td>aː</td>
+										<td>A_A</td>
+									</tr>
+									<tr>
+										<td>49</td>
+										<td>ی</td>
+										<td>iː</td>
+										<td>I_I</td>
+									</tr>
+									<tr>
+										<td>50</td>
+										<td>ے</td>
+										<td>eː</td>
+										<td>A_Y</td>
+									</tr>
+
+									<tr>
+										<td>51</td>
+										<td>ے َ</td>
+										<td>æː</td>
+										<td>A_E</td>
+									</tr>
+
+									<tr>
+										<td colspan="4">Nasalized Long Vowels</td>
+									</tr>
+
+									<tr>
+										<td>52</td>
+										<td>وں ُ</td>
+										<td>ũː</td>
+										<td>U_U_N</td>
+									</tr>
+									<tr>
+										<td>53</td>
+										<td>وں</td>
+										<td>õː</td>
+										<td>O_O_N</td>
+									</tr>
+
+									<tr>
+										<td>54</td>
+										<td>وں َ</td>
+										<td>ɔ̃ː</td>
+										<td>O_N</td>
+									</tr>
+								</table>
+							</td>
+
+							<td class="noHover" style="padding: 15px; width: 46%;">
+								<table width="100%">
+
+									<tr>
+										<th>#</th>
+										<th>Urdu Letter</th>
+										<th>IPA</th>
+										<th>CISAMPA</th>
+									</tr>
+
+									<tr>
+										<td>55</td>
+										<td>آں،اں</td>
+										<td>ãː</td>
+										<td>A_A_N</td>
+									</tr>
+									<tr>
+										<td>56</td>
+										<td>یں ِ</td>
+										<td>ĩː</td>
+										<td>I_I_N</td>
+									</tr>
+									<tr>
+										<td>57</td>
+										<td>یں</td>
+										<td>ẽː</td>
+										<td>A_Y_N</td>
+									</tr>
+
+
+									<tr>
+										<td>58</td>
+										<td>یں َ</td>
+										<td>æ̃ː</td>
+										<td>A_E_N</td>
+									</tr>
+
+									<tr>
+										<td colspan="4">Half Long Vowels</td>
+									</tr>
+
+									<tr>
+										<td>59</td>
+										<td>ہ ِ</td>
+										<td>eˑ</td>
+										<td>A_Y_H</td>
+									</tr>
+									<tr>
+										<td>60</td>
+										<td>ہ َ</td>
+										<td>æˑ</td>
+										<td>A_E_H</td>
+									</tr>
+									<tr>
+										<td>61</td>
+										<td>ہ ُ</td>
+										<td>oˑ</td>
+										<td>O_O_H</td>
+									</tr>
+
+									<tr>
+										<td colspan="4">Short Vowels</td>
+									</tr>
+
+									<tr>
+										<td>62</td>
+										<td>ِ</td>
+										<td>ɪ</td>
+										<td>I</td>
+									</tr>
+									<tr>
+										<td>63</td>
+										<td>ُ</td>
+										<td>ʊ</td>
+										<td>U</td>
+									</tr>
+									<tr>
+										<td>64</td>
+										<td>ء،َ</td>
+										<td>ə</td>
+										<td>A</td>
+									</tr>
+
+								</table>
+
+							</td>
+						</tr>
+
+
+					</table>
+
+				</center>
+			</div>
+		</center>
+		<hr>
+		<p>
+			References:<br>
+
+			<ul>
+				<li>
+					<a target="_blank" href="http://www.cle.org.pk/Downloads/ling_resources/phoneticinventory/UrduPhoneticInventory.pdf">Urdu Phonetic Inventory</a>
+				</li>
+			</ul>
+
+		</p>
+
+		<center>
+			<hr>
+			<div name="footer" style="width: 90%;">
+				<center>
+					<p style="font-size: 1.3vw;">
+						Copyrights Ⓒ 2017 | <a href="http://www.csalt.itu.edu.pk" target="_blank">Center for Speech and Language Technologies</a> | <a href="http://www.itu.edu.pk" target="_blank">Information Technology University</a>
+					</p>
+				</center>
+			</div>
+
+		</center>
+	</body>
+
+</html>

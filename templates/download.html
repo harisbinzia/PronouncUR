@@ -1,0 +1,84 @@
+<DOCTYPE! html>
+
+<html>
+
+	<head>
+
+		 <meta charset="UTF-8">
+
+		<title>PronouncUR: An Urdu Pronunciation Lexicon Generator</title>
+
+		<style type="text/css">
+			a
+			{
+				color: black;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<center>
+
+			<div name="header" style="width: 90%;">
+
+				<table style="width:100%;">
+
+					<tr>
+						
+						<td style="width: 25%;">
+							
+							<img src="/static/csalt.png" style="width: 45%; float: left;">
+
+						</td>
+
+						<td style="width: 50%">
+							
+							<center>
+								<p style="font-size: 2.5vw; font-weight: bold;">
+									PronouncUR: An Urdu Pronunciation Lexicon Generator
+								</p>
+
+								<p style="font-size: 1.5vw;"">
+									<a href="{{ url_for('index') }}">Home</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="{{ url_for('graphemes') }}">Urdu Graphemes</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="{{ url_for('phonemes') }}">Urdu Phonemes</a>
+								</p>
+
+							</center>
+
+						</td>
+
+						<td style="width: 25%;">
+							
+							<img src="/static/itu.png" style="width: 80%; float: right;">
+
+						</td>
+
+					</tr>
+
+				</table>
+
+			</div>
+			<hr>
+
+			<div name="content" style="width: 90%;">
+				
+				<h1>Download Lexicon</h1>
+				<a href="{{ url_for('download_file', filename=filename) }}">Download</a>
+
+			</div>
+
+			<div name="footer" style="width: 99%; position: fixed; bottom: 0px;">
+				<center>
+					<hr>
+					<p style="font-size: 1.3vw;">
+						Copyrights Ⓒ 2017 | <a href="http://www.csalt.itu.edu.pk" target="_blank">Center for Speech and Language Technologies</a> <a href="http://www.itu.edu.pk" target="_blank">Information Technology University</a>
+					</p>
+				</center>
+			</div>
+
+		</center>
+	</body>
+
+</html>

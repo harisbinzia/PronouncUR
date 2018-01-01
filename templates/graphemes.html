@@ -1,0 +1,429 @@
+<DOCTYPE! html>
+
+<html>
+
+	<head>
+
+		 <meta charset="UTF-8">
+
+		<title>PronouncUR: An Urdu Pronunciation Lexicon Generator</title>
+
+		<style type="text/css">
+
+			.nostyle
+			{
+				border: none;
+				padding: 0px;
+				background-color: #fff;
+			}
+
+			.nostyle:hover
+			{
+				border: none;
+				padding: 0px;
+				background-color: #fff;
+			}
+
+			tr, table, td, th
+			{
+				text-align: center;
+				border: 1px solid black;
+			}
+
+			table
+			{
+				border-collapse: collapse;
+			}
+
+			td
+			{
+				padding: 5px;
+			}
+
+			tr:hover
+			{
+				background-color: rgb(255, 255, 204);
+			}
+			
+			.noHover:hover
+			{
+				background-color: #ffffff;
+			}
+			.noHover
+			{
+				border-style: none;
+			}
+
+			a
+			{
+				color: black;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<center>
+
+			<div name="header" style="width: 90%;">
+
+				<table class="nostyle" style="width:100%;">
+
+					<tr class="nostyle">
+						
+						<td class="nostyle" style="width: 25%;">
+							
+							<img src="/static/csalt.png" style="width: 45%; float: left;">
+
+						</td>
+
+						<td class="nostyle" style="width: 50%">
+							
+							<center>
+								<p style="font-size: 2.5vw; font-weight: bold;">
+									PronouncUR: An Urdu Pronunciation Lexicon Generator
+								</p>
+
+								<p style="font-size: 1.5vw;"">
+									<a href="{{ url_for('index') }}">Home</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="{{ url_for('graphemes') }}">Urdu Graphemes</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="{{ url_for('phonemes') }}">Urdu Phonemes</a>
+								</p>
+
+							</center>
+
+						</td>
+
+						<td class="nostyle" style="width: 25%;">
+							
+							<img src="/static/itu.png" style="width: 80%; float: right;">
+
+						</td>
+
+					</tr>
+
+				</table>
+
+			</div>
+			<hr>
+
+			<div name="content" style="width: 90%;">
+				
+				<center>
+					Below is the list of supported graphemes.
+
+					<table class="noHover" width="70%">
+						<tr class="noHover" width="100%">
+							<td class="noHover" style="padding: 15px; width: 46%;">
+
+								<table width="100%">
+									<tr>
+										<th>#</th>
+										<th>Grapheme</th>
+										<th>Letter Name</th>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>ء</td>
+										<td>hamză</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>آ</td>
+										<td>alif madd</td>
+									</tr><!-- 
+									<tr>
+										<td>3</td>
+										<td>أ</td>
+										<td>alif with hamză above</td>
+									</tr> -->
+									<tr>
+										<td>3</td>
+										<td>ؤ</td>
+										<td>wā’o with hamză above</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>ئ</td>
+										<td>choṭī ye with hamză above</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>ا</td>
+										<td>alif</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>ب</td>
+										<td>be</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>ت</td>
+										<td>te</td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td>ث</td>
+										<td>ṡe</td>
+									</tr>
+									<tr>
+										<td>9</td>
+										<td>ج</td>
+										<td>jīm</td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>ح</td>
+										<td>baṛī ḥe</td>
+									</tr>
+									<tr>
+										<td>11</td>
+										<td>خ</td>
+										<td>ḳhe</td>
+									</tr>
+									<tr>
+										<td>12</td>
+										<td>د</td>
+										<td>dāl</td>
+									</tr>
+									<tr>
+										<td>13</td>
+										<td>ذ</td>
+										<td>ẕāl</td>
+									</tr>
+									<tr>
+										<td>14</td>
+										<td>ر</td>
+										<td>re</td>
+									</tr>
+									<tr>
+										<td>15</td>
+										<td>ز</td>
+										<td>ze</td>
+									</tr>
+									<tr>
+										<td>16</td>
+										<td>س</td>
+										<td>sīn</td>
+									</tr>
+									<tr>
+										<td>17</td>
+										<td>ش</td>
+										<td>šhīn</td>
+									</tr>
+									<tr>
+										<td>18</td>
+										<td>ص</td>
+										<td>ṣvād</td>
+									</tr>
+									<tr>
+										<td>19</td>
+										<td>ض</td>
+										<td>ẓvād</td>
+									</tr>
+									<tr>
+										<td>20</td>
+										<td>ط</td>
+										<td>t̤o’e</td>
+									</tr>
+									<tr>
+										<td>21</td>
+										<td>ظ</td>
+										<td>z̤o’e</td>
+									</tr>
+									<tr>
+										<td>22</td>
+										<td>ع</td>
+										<td>ʿain</td>
+									</tr>
+									<tr>
+										<td>23</td>
+										<td>غ</td>
+										<td>ġhain</td>
+									</tr>
+									<tr>
+										<td>24</td>
+										<td>ف</td>
+										<td>fe</td>
+									</tr>
+									<tr>
+										<td>25</td>
+										<td>ق</td>
+										<td>qāf</td>
+									</tr>
+								</table>
+
+							</td>
+							<td class="noHover" style="padding: 15px; width: 46%;">			
+								<table width="100%">
+									<tr>
+										<th>#</th>
+										<th>Grapheme</th>
+										<th>Letter Name</th>
+									</tr>
+									<tr>
+										<td>26</td>
+										<td>ل</td>
+										<td>lām</td>
+									</tr>
+									<tr>
+										<td>27</td>
+										<td>م</td>
+										<td>mīm</td>
+									</tr>
+									<tr>
+										<td>28</td>
+										<td>ن</td>
+										<td>nūn</td>
+									</tr>
+									<tr>
+										<td>29</td>
+										<td>و</td>
+										<td>wā’o</td>
+									</tr>
+									<tr>
+										<td>30</td>
+										<td>ً</td>
+										<td>do zabar</td>
+									</tr>
+									<tr>
+										<td>31</td>
+										<td>َ</td>
+										<td>zabar</td>
+									</tr>
+									<tr>
+										<td>32</td>
+										<td>ُ</td>
+										<td>pesh</td>
+									</tr>
+									<tr>
+										<td>33</td>
+										<td>ِ</td>
+										<td>zer</td>
+									</tr>
+									<tr>
+										<td>34</td>
+										<td>ّ</td>
+										<td>shad</td>
+									</tr>
+									<tr>
+
+										<td>35</td>
+										<td>ْ</td>
+										<td>jazm</td>
+
+									</tr>
+									<tr>
+										<td>36</td>
+										<td>ٰ</td>
+										<td>khari zabar</td>
+									</tr>
+									<tr>
+										<td>37</td>
+										<td>ٹ</td>
+										<td>ṭe</td>
+									</tr>
+									<tr>
+										<td>38</td>
+										<td>پ</td>
+										<td>pe</td>
+									</tr>
+									<tr>
+										<td>39</td>
+										<td>چ</td>
+										<td>ce</td>
+									</tr>
+									<tr>
+										<td>40</td>
+										<td>ڈ</td>
+										<td>ḍāl</td>
+									</tr>
+									<tr>
+										<td>41</td>
+										<td>ڑ</td>
+										<td>ṛe</td>
+									</tr>
+									<tr>
+										<td>42</td>
+										<td>ژ</td>
+										<td>żhe</td>
+									</tr>
+									<tr>
+										<td>43</td>
+										<td>ک</td>
+										<td>kāf</td>
+									</tr>
+									<tr>
+										<td>44</td>
+										<td>گ</td>
+										<td>gāf</td>
+									</tr>
+									<tr>
+										<td>45</td>
+										<td>ں</td>
+										<td>nūn ġhunnā</td>
+									</tr>
+									<tr>
+										<td>46</td>
+										<td>ھ</td>
+										<td>do cashmī he </td>
+									</tr>
+									<tr>
+										<td>47</td>
+										<td>ہ</td>
+										<td>choṭī he</td>
+									</tr>
+									<tr>
+										<td>48</td>
+										<td>ۃ</td>
+										<td>te marbuta</td>
+									</tr>
+									<tr>
+										<td>49</td>
+										<td>ی</td>
+										<td>choṭī ye</td>
+									</tr>
+									<tr>
+										<td>50</td>
+										<td>ے</td>
+										<td>baṛī ye</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</center>
+			</div>
+		</center>
+		<hr>
+		<p>
+			References:<br>
+
+			<ul>
+				<li>
+					<a target="_blank" href="http://www.columbia.edu/~mk2580/urdu_section/handouts/alphabet.pdf">Urdu Letters, Names and Transliteration</a>
+				</li>
+
+				<li>
+					<a target="_blank" href="http://unicode.org/charts/PDF/U0600.pdf">The Unicode Standard, Version 10.0</a>
+				</li>
+
+			</ul>
+
+		</p>
+
+		<center>
+			<hr>
+			<div name="footer" style="width: 90%;">
+				<center>
+					<p style="font-size: 1.3vw;">
+						Copyrights Ⓒ 2017 | <a href="http://www.csalt.itu.edu.pk" target="_blank">Center for Speech and Language Technologies</a> | <a href="http://www.itu.edu.pk" target="_blank">Information Technology University</a>
+					</p>
+				</center>
+			</div>
+
+		</center>
+	</body>
+
+</html>
