@@ -6,7 +6,7 @@ Read my lips - this tool works only for Urdu. This means this tool only support 
 
 Live Demo: http://lextool.csalt.itu.edu.pk
 
-# Requirements
+# Requirement(s)
 
 This tool requires [TensorFlow](https://www.tensorflow.org/) and [Sequence-to-Sequence G2P toolkit](https://github.com/cmusphinx/g2p-seq2seq). Please see [requirements.txt](https://github.com/harisbinzia/PronouncUR/blob/master/requirements.txt) for details.
 
@@ -14,7 +14,7 @@ This tool requires [TensorFlow](https://www.tensorflow.org/) and [Sequence-to-Se
 
 A pretrained model (2-layer LSTM with 512 hidden units) is [available for download](https://github.com/harisbinzia/PronouncUR/tree/master/itudict). The model is trained on a handcrafted expert lexicon of around 39,000 words.
 
-# References
+# Reference(s)
 
 If you use this tool in any of your work, please cite below paper.
 
