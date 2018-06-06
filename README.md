@@ -18,7 +18,7 @@ A pretrained model (2-layer LSTM with 512 hidden units) is [available for downlo
 
 If you use this tool in any of your work, please cite below paper.
 
-## [PronouncUR: An Urdu Pronunciation Lexicon Generator](http://www.lrec-conf.org/proceedings/lrec2018/pdf/646.pdf)
+[PronouncUR: An Urdu Pronunciation Lexicon Generator](http://www.lrec-conf.org/proceedings/lrec2018/pdf/646.pdf)
 
 ```
 @InProceedings{BIN ZIA18.646,
