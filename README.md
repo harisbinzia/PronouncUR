@@ -4,7 +4,7 @@ This tool generates a pronunciation dictionary from a list of Urdu words in a fo
 
 Read my lips - this tool works only for Urdu. This means this tool only support Urdu graphemes (letters).
 
-Live Demo: http://lextool.csalt.itu.edu.pk
+Live Demo: http://119.153.105.10:7576
 
 # Requirement(s)
 
