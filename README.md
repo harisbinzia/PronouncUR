@@ -4,8 +4,6 @@ This tool generates a pronunciation dictionary from a list of Urdu words in a fo
 
 Read my lips - this tool works only for Urdu. This means this tool only support Urdu graphemes (letters).
 
-Live Demo: http://119.153.105.10:7576
-
 # Requirement(s)
 
 This tool requires [TensorFlow](https://www.tensorflow.org/) and [Sequence-to-Sequence G2P toolkit](https://github.com/cmusphinx/g2p-seq2seq). Please see [requirements.txt](https://github.com/harisbinzia/PronouncUR/blob/master/requirements.txt) for details.
