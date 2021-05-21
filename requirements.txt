@@ -2,4 +2,4 @@ numpy==1.13.1
 Flask==0.12.2
 six==1.10.0
 Werkzeug==0.12.2
-tensorflow==1.0.0
+tensorflow==2.5.0
